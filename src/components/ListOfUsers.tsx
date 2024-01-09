@@ -5,7 +5,9 @@ import {
     TableCell,
     TableHead,
     TableHeaderCell,
-    TableBody
+    TableBody,
+    Title, 
+    Badge
   } from "@tremor/react";
   
   const users: {
@@ -38,6 +40,12 @@ import {
   export default function ListOfUsers() {
     return (
       <Card>
+        <Title>
+            Usuarios
+            <Badge className="mx-8">
+                {users.length}
+            </Badge>
+        </Title>
         <Table>
           <TableHead>
             <TableRow>
