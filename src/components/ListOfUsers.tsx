@@ -9,35 +9,10 @@ import {
     Title, 
     Badge
   } from "@tremor/react";
-  
-  const users: {
-    id: string,
-    name: string,
-    email: string,
-    github:string
-
-  }[] = [
-    {
-      id: "1",
-      name: "Peter Doe",
-      email: "peter@gmail.com",
-      github: "peter"
-    },
-    {
-        id: "2",
-        name: "Ana",
-        email: "ana@gmail.com",
-        github: "ana"
-    },
-    {
-        id: "3",
-        name: "John",
-        email: "john@gmail.com",
-        github: "john"
-    }
-  ];
+  import { useAppSelector } from "../hooks/store";
   
   export default function ListOfUsers() {
+    const users = useAppSelector((state) => state.users);
     return (
       <Card>
         <Title>
