@@ -28,7 +28,6 @@ import {
         <Table>
           <TableHead>
             <TableRow>
-              <TableHeaderCell>Name</TableHeaderCell>
               <TableHeaderCell>Id</TableHeaderCell>
               <TableHeaderCell>Nombre </TableHeaderCell>
               <TableHeaderCell>Email </TableHeaderCell>
@@ -37,7 +36,8 @@ import {
           </TableHead>
             <TableBody>
                 {users.map((item) => (
-                    <TableRow key={item.id}>
+                    <TableRow key={item.name}>
+                    <TableCell>{item.id}</TableCell>
                     <TableCell className="flex items-center">
                         <img
                         className="w-12 h-12 border rounded-full mr-4"
@@ -46,8 +46,6 @@ import {
                         />
                         {item.name}
                     </TableCell>
-                    <TableCell>{item.id}</TableCell>
-                    <TableCell>{item.name}</TableCell>
                     <TableCell>{item.email}</TableCell>
                     <TableCell>
                         <button type='button'>
